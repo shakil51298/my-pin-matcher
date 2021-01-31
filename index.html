@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pin-generator half-width">
+                    <input id="generate-input" class="form-control" type="text">
+                    <button id="generate-Btn" class="generate-btn">Generate Pin</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-section half-width">
+                    <input id="submit-input" class="form-control" type="text">
+                    <div class="numbers">
+                        <div id="calc-btns" class="calc-body">
+                            <div class="calc-button-row">
+                                <div class="button">7</div>
+                                <div class="button">8</div>
+                                <div class="button">9</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div class="button">4</div>
+                                <div class="button">5</div>
+                                <div class="button">6</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div id="btn-One" class="button">1</div>
+                                <div id="btn-Two" class="button">2</div>
+                                <div id="btn-Three" class="button">3</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div class="button">
+                                    B</div>
+                                <div class="button">0
+                                </div>
+                                <div class="button">C</div>
+                            </div>
+                            <div>
+                                <button id="Submit-btn" type="submit" class="submit-btn">Submit</button>
+                                <p class="action-left">3 try left</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notify-section">
+                <p id="pinWrong" class="notify" style="display: none;">❌ Pin Didn't Match, Please try again</p>
+                <p id="pinok" class="notify" style="display: none;">✅ Pin Matched... Secret door is opening for you</p>
+            </div>
+        </div>
+
+
+        <script>
+            const GeneratePin = document.getElementById('generate-Btn');
+            GeneratePin.addEventListener('click', function () {
+                const geneRateInput = document.getElementById('generate-input').value;
+                document.getElementById('generate-input').value = GetPin();
+            })
+
+            function GetPin() {
+                const random = Math.random() * 10000;
+                const pin = (random + '').split('.')[0];
+                if (pin.length === 4) {
+                    return pin;
+                } else {
+                    return GetPin();
+                }
+            }
+            const AllBtn = document.getElementById('calc-btns');
+            AllBtn.addEventListener('click', function (event) {
+                const digit = event.target.innerText;
+
+                if (isNaN(digit)) {
+
+
+                    if (digit === 'C') {
+                        document.getElementById('submit-input').value = ' ';
+                    }
+                    if (digit === 'B') {
+                        const typedInput = document.getElementById('submit-input');
+                        // typedInput.value = typedInput.value - ;
+                        var shakil = document.getElementById('submit-input');
+                        const deletDigit = shakil.value - shakil.value;
+                        document.getElementById('submit-input').value = deletDigit;
+                    }
+                } else {
+                    const typedInput = document.getElementById('submit-input');
+                    typedInput.value = typedInput.value + digit;
+                }
+            });
+
+            const SubmitBtn = document.getElementById('Submit-btn');
+            SubmitBtn.addEventListener('click', function () {
+                VerifyPin();
+                // console.log('shakil')
+            })
+
+            function VerifyPin() {
+                const pin = document.getElementById('generate-input').value;
+                const pinNumber = parseInt(pin);
+                const typedpin = document.getElementById('submit-input').value;
+                const typedpinNumber = parseInt(typedpin)
+
+                if (pinNumber === typedpinNumber) {
+                    document.getElementById('pinok').style.display = "block";
+                    document.getElementById('piwrong').style.display = "none";
+
+                } else {
+                    document.getElementById('pinWrong').style.display = "block";
+                    document.getElementById('pinok').style.display = "none";
+                }
+            }
+
+            // const Btn = document.getElementById('btn-One');
+            // Btn.addEventListener('click', function () {
+            //     var BtnOne = 1;
+            //     document.getElementById('submit-input').value = BtnOne;
+            // })
+
+            // const Btns = document.getElementById('btn-Three');
+            // Btns.addEventListener('click', function () {
+            //     var BtnThree = 3;
+            //     document.getElementById('submit-input').value = BtnThree;
+            // })
+        </script>
+</body>
+
+</html>

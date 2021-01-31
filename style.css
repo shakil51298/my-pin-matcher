@@ -15,6 +15,7 @@ body {
     padding: 30px;
     text-align: center;
 }
+
 .generate-btn{
     margin-top: 140px;
     width: 180px;
@@ -27,11 +28,21 @@ body {
     font-size: 20px;
     text-align: center;
 }
+.generate-btn:hover{
+    
+}
 .generate-btn:focus{
     outline: none;
     box-shadow: none;
+    transition:ease-out .5s;
+    box-shadow: 3px -5px 25px rgb(83, 83, 83);
 }
-
+.naming{
+    font-family: 'Londrina Solid', cursive;
+    word-spacing: 10px;
+    color: red;
+    margin-top: 130px;
+}
 input[type='text']{
     background-color: #3D4153;
     padding: 10px 0px;

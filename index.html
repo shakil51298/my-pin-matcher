@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <!-- g font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,6 +20,9 @@
                 <div class="pin-generator half-width">
                     <input id="generate-input" class="form-control" type="text">
                     <button id="generate-Btn" class="generate-btn">Generate Pin</button>
+                    <div class="naming">
+                        <h4>My Code Matcher</h4>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -91,9 +97,10 @@
                         const typedInput = document.getElementById('submit-input');
                         // typedInput.value = typedInput.value - ;
                         var shakil = document.getElementById('submit-input');
-                        const deletDigit = shakil.value - shakil.value;
+                        const deletDigit = shakil.value -shakil.value;
                         document.getElementById('submit-input').value = deletDigit;
                     }
+                    
                 } else {
                     const typedInput = document.getElementById('submit-input');
                     typedInput.value = typedInput.value + digit;
@@ -111,12 +118,13 @@
                 const pinNumber = parseInt(pin);
                 const typedpin = document.getElementById('submit-input').value;
                 const typedpinNumber = parseInt(typedpin)
-
+                
                 if (pinNumber === typedpinNumber) {
                     document.getElementById('pinok').style.display = "block";
-                    document.getElementById('piwrong').style.display = "none";
+                    document.getElementById('pinWrong').style.display = "none";
 
-                } else {
+                }
+                else {
                     document.getElementById('pinWrong').style.display = "block";
                     document.getElementById('pinok').style.display = "none";
                 }

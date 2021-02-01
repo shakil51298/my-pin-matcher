@@ -38,10 +38,9 @@ body {
     box-shadow: 3px -5px 25px rgb(83, 83, 83);
 }
 .naming{
-    font-family: 'Londrina Solid', cursive;
-    word-spacing: 10px;
+    font-family: 'Open Sans Condensed', sans-serif;
     color: red;
-    margin-top: 130px;
+    margin-top: 140px;
 }
 input[type='text']{
     background-color: #3D4153;
@@ -110,7 +109,9 @@ color: #E0B612;
 .notify-section{
     width: 35%;
     margin: 0 auto;
+    
 }
+
 .action-left {
     color: #FF3C5F;
     margin-top: 10px;

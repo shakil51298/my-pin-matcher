@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="style.css">
     <!-- g font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <!-- add logo -->
+    <link rel="icon" href="image/1200px-Red_circle.svg.png">
 </head>
 
 <body>
@@ -21,7 +23,7 @@
                     <input id="generate-input" class="form-control" type="text">
                     <button id="generate-Btn" class="generate-btn">Generate Pin</button>
                     <div class="naming">
-                        <h4>My Code Matcher</h4>
+                        <p>Md Khalid | CST (3rd) student of JXUT, China -2021</p>
                     </div>
                 </div>
             </div>
@@ -46,30 +48,28 @@
                                 <div id="btn-Three" class="button">3</div>
                             </div>
                             <div class="calc-button-row">
-                                <div class="button">
-                                    B</div>
+                                <div class="button">B</div>
                                 <div class="button">0
                                 </div>
                                 <div class="button">C</div>
                             </div>
                             <div>
                                 <button id="Submit-btn" type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                                <p class="action-left"> <span id="tryLeft">3</span> try left</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="notify-section">
-                <p id="pinWrong" class="notify" style="display: none;">❌ Pin Didn't Match, Please try again</p>
-                <p id="pinok" class="notify" style="display: none;">✅ Pin Matched... Secret door is opening for you</p>
+                <p id="pinWrong" class="notify" style="display: non;">❌ Pin Didn't Match, Please try again</p>
+                <p id="pinok" class="notify" style="display: non;">✅ Pin Matched... Secret door is opening for you</p>
             </div>
         </div>
 
 
         <script src="Draf.js"></script>
         <script>
-
             // const GeneratePin = document.getElementById('generate-Btn');
             // GeneratePin.addEventListener('click', function () {
             //     const geneRateInput = document.getElementById('generate-input').value;
@@ -93,7 +93,7 @@
 
 
             //         if (digit === 'C') {
-            //             document.getElementById('submit-input').value = ' ';
+            //         document.getElementById('submit-input').value = ' ';
             //         }
             //         if (digit === 'B') {
             //             const typedInput = document.getElementById('submit-input');
@@ -102,7 +102,7 @@
             //             const deletDigit = shakil.value -shakil.value;
             //             document.getElementById('submit-input').value = deletDigit;
             //         }
-                    
+
             //     } else {
             //         const typedInput = document.getElementById('submit-input');
             //         typedInput.value = typedInput.value + digit;
@@ -120,7 +120,7 @@
             //     const pinNumber = parseInt(pin);
             //     const typedpin = document.getElementById('submit-input').value;
             //     const typedpinNumber = parseInt(typedpin)
-                
+
             //     if (pinNumber === typedpinNumber) {
             //         document.getElementById('pinok').style.display = "block";
             //         document.getElementById('pinWrong').style.display = "none";

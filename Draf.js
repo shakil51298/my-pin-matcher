@@ -72,7 +72,7 @@ function tryleft() {
         var againTryParse = parseInt(againTry);
         var zero = againTryParse * 0;
         document.getElementById('tryLeft').innerText = zero;
-        alert('pleaser Reload the page and get more 3 try!')
+        alert('please Reload the page and \n get more 3 try! {shakil}')
     }
 
     
